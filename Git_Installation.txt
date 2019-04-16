@@ -40,3 +40,18 @@ $ git clone git://github.com/schacon/grit.git
 That creates a directory named grit, initializes a .git directory inside it, pulls down all the data for that repository, and checks out a working copy of the latest version. If you go into the new grit directory, you’ll see the project files in there, ready to be worked on or used. If you want to clone the repository into a directory named something other than grit, you can specify that as the next command-line option:
 
 
+#Create a new branch and push into it.
+
+$ git init
+$ git add .
+$ git commit -m "Librarian control to Admin"
+$ git pull
+$ git checkout -b librarian_removal
+$ git push origin librarian_removal
+$ git branch -a
+$ git checkout master
+$ git pull https://gitea.geminisolutions.in/ar.sharma1/Gem-Library.git librarian_removal
+$ git push origin master
+
+
+
