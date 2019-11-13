@@ -1,4 +1,4 @@
-#Entering our Identity
+# Entering our Identity
 
 The first thing you should do when you install Git is to set your user name and e-mail address. This is important because every Git commit uses this information, and it’s immutably baked into the commits you pass around:
 
@@ -9,7 +9,7 @@ Again, you need to do this only once if you pass the --global option, because th
 
 If you want to override this with a different name or e-mail address for specific projects, you can run the command without the --global option when you’re in that project.
 
-#Checking the Settings
+# Checking the Settings
 
 If you want to check your settings, you can use the git config --list command to list all the settings Git can find at that point:
 
@@ -27,12 +27,12 @@ $ git config user.name
 
 Scott Chacon
 
-#Getting Started
+# Getting Started
 
 **update this**
 
 
-#Cloning a Repository
+# Cloning a Repository
 
 You clone a repository with git clone [url]. For example, if you want to clone the Ruby Git library called Grit, you can do so like this:
 
@@ -40,7 +40,7 @@ $ git clone git://github.com/schacon/grit.git
 That creates a directory named grit, initializes a .git directory inside it, pulls down all the data for that repository, and checks out a working copy of the latest version. If you go into the new grit directory, you’ll see the project files in there, ready to be worked on or used. If you want to clone the repository into a directory named something other than grit, you can specify that as the next command-line option:
 
 
-#Create a new branch and push into it.
+# Create a new branch and push into it.
 
 $ git init
 $ git add .
@@ -53,5 +53,14 @@ $ git checkout master
 $ git pull https://gitea.geminisolutions.in/ar.sharma1/Gem-Library.git librarian_removal
 $ git push origin master
 
+# To make changes to a cloned project and push them directly.
 
+$ git branch
+$ git add/rm <file_name>
+$ git commit -m "Message Here"
+# to fetch all the latest changes from the master branch
+$ git fetch -v --all
+# Write our changes on top of the fetched changes
+$ git rebase
+$ git push origin <branch_name>
 
