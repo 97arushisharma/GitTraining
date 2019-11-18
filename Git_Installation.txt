@@ -64,3 +64,13 @@ $ git fetch -v --all
 $ git rebase
 $ git push origin <branch_name>
 
+# Cherry Pick a commit from branch1 to branch2.
+
+$ git checkout <branch1>
+$ git checkout <branch2>
+$ git cherry -v branch2 branch1
+# This will show the list of all the commits in branch2 that were made after the split from branch1.
+$ git cherry-pick <commit_reference>
+# Then create a single commit for all commits
+$ git rebase -i
+
