@@ -75,3 +75,11 @@ $ git cherry-pick <commit_reference>
 $ git rebase -i
 Edit the 'pick' into 's' for all the commits except the first one to squash them into a single commit.
 
+# How to show a particular commit including the changes
+
+# This will show all the recent commits in the chronological order
+$ git log
+# Pick the commit hash of the commit that you wish to see and use it in the below command
+$ git show <commit-hash>
+# To show the differences in the uncommited code and the master(origin)
+$ git diff
