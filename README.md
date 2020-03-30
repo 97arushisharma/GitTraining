@@ -93,9 +93,9 @@ something other than GitTraining, you can specify that as the next command-line 
   
 ### Then create a single commit for all commits
 
->     $ git rebase -i
+>     $ git rebase -i <Commit-Hash>
   
-Edit the 'pick' into 's' for all the commits except the first one to squash them into a single commit.
+The `Commit-Hash` will be the hash for the commit ovre which all the commits have to be squashed. Edit the 'pick' into 's' for all the commits except the first one to squash them into a single commit.
 
 ## How to show a particular commit including the changes
 
