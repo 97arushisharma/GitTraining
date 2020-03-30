@@ -84,7 +84,15 @@ something other than GitTraining, you can specify that as the next command-line 
 ## Cherry Pick a commit from branch1 to branch2.
 
 >     $ git checkout <branch1>
+>     $ git log --oneline
+Select the hash for the commit that you wish to cherry-pick.
 >     $ git checkout <branch2>
+>     $ git cherry-pick <commit-hash>
+Incase of any merge conflicts resolve them and then use the following commands:
+>     $ git add <file-name>
+>     $ git cherry-pick --continue
+This will apply the cherry-picked commit on top of the HEAD of the branch2.
+  
 >     $ git cherry -v branch2 branch1
   
 ### This will show the list of all the commits in branch2 that were made after the split from branch1.
