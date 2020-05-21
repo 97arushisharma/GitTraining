@@ -37,7 +37,43 @@ point:
   
 ## Getting Started
 
-**update this**
+To push a new project to github follow the following steps:
+
+>     $ cd <project_directory>
+>     $ git init
+>     $ git add <file_name> OR .
+
+(.) dot adds all the files present in that directory to the commit.
+
+>     $ git commit -m "Commit Message"
+
+The commit message should ideally be less than 8 words. To write an extended description use:
+
+>     $ git commit -m
+
+Add the commit message to the file that opens.
+
+Now create a repository on github. Now creat a SSH key for remote ssh to the repo from your machine. For this look if the rsa key already exist:
+
+>     $ cat ~/.ssh/id_rsa.pub
+
+If the file does not exist create a rsa key using the following steps:
+
+>     $ ssh-keygen -t rsa
+Press enter until it generates a key. Now copy the content of the public key(id_rsa.pub) and add them to your github settings under SSH key:
+
+```
+https://github.com/settings/keys
+```
+Now add the remote repo to your local repo:
+
+>     $ git remote add origin git@github.com:XYZ/project.git
+>     $ git remote -v
+
+Now push your commits to the master branch:
+
+>     $ git pull --rebase origin master
+>     $ git push origin master
 
 ## Cloning a Repository
 
