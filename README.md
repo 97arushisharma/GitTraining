@@ -117,23 +117,30 @@ something other than GitTraining, you can specify that as the next command-line 
 >     $ git rebase
 >     $ git push origin <branch_name>
   
-## Cherry Pick a commit from branch1 to branch2.
+## Cherry Pick a commit from branch1 to branch2(Instead of Merging)
 
 >     $ git checkout <branch1>
 >     $ git log --oneline
-Select the hash for the commit that you wish to cherry-pick.
+  This will show all the commits that have been performed on branch1.
+Select the hash for the commit that you wish to cherry-pick and apply over branch2.
 >     $ git checkout <branch2>
 >     $ git cherry-pick <commit-hash>
+  Apply the commit hash for all the commits that you need in the chronological order(earliest first)
 Incase of any merge conflicts resolve them and then use the following commands:
 >     $ git add <file-name>
 >     $ git cherry-pick --continue
 This will apply the cherry-picked commit on top of the HEAD of the branch2.
+To see the files that have been changed use:
+>     $ git diff --name-status <branch2>..<branch1>
+Now to squash any commits use:
+>     $ git rebase -i
+  Edit the `pick` to `s` or `f` for all commits except the first.
+To edit the commit message:
+>     $ git commit --amend
+>     $ git push origin <branch2>
   
 >     $ git cherry -v branch2 branch1
-  
-### This will show the list of all the commits in branch2 that were made after the split from branch1.
-
->     $ git cherry-pick <commit_reference>
+   This will show the list of all the commits in branch2 that were made after the split from branch1.
   
 ### Then create a single commit for all commits
 
@@ -154,3 +161,7 @@ The `Commit-Hash` will be the hash for the commit ovre which all the commits hav
 ### To show the differences in the uncommited code and the master(origin)
 
 >     $ git diff
+
+### To see the git commit graph
+
+>     $ git log --all --oneline --graph
