@@ -134,7 +134,26 @@ To see the files that have been changed use:
 >     $ git diff --name-status <branch2>..<branch1>
 Now to squash any commits use:
 >     $ git rebase -i
-  Edit the `pick` to `s` or `f` for all commits except the first.
+  Edit the `pick` to `s` or `f` for all commits except the first. `s` and `f` flag squash/ fixes the commit to the commit preceding it.
+
+Advanced used case: Suppose you have made two tools named “apple” and “orange”
+```
+<cid> Add feature for apple
+<cid> Paint apple red
+<cid> Eat apple
+<cid> Eat orange
+<cid> Throw orange
+```
+So, we will edit them as:
+```
+p Add feature for apple
+f Paint apple red
+f Eat apple
+p Eat orange
+f Throw orange
+```
+You can even reorder commits in `git rebase -i`.
+
 To edit the commit message:
 >     $ git commit --amend
 >     $ git push origin <branch2>
