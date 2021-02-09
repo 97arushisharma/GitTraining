@@ -167,11 +167,16 @@ To edit the commit message:
   
 The `Commit-Hash` will be the hash for the commit ovre which all the commits have to be squashed. Edit the 'pick' into 's' for all the commits except the first one to squash them into a single commit.
 
+### To checkout a particular commit from current branch into a new branch
+
+>     $ git branch <branch-name> <commit-hash>
+
 ## How to show a particular commit including the changes
 
 ### This will show all the recent commits in the chronological order
 
 >     $ git log
+>     $ git log --decorated
 
 ### Pick the commit hash of the commit that you wish to see and use it in the below command
 
@@ -180,6 +185,8 @@ The `Commit-Hash` will be the hash for the commit ovre which all the commits hav
 ### To show the differences in the uncommited code and the master(origin)
 
 >     $ git diff
+To show differences in the staged changes
+>     $ git diff --staged
 
 ### To see the git commit graph
 
