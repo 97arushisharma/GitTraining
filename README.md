@@ -191,3 +191,8 @@ To show differences in the staged changes
 ### To see the git commit graph
 
 >     $ git log --all --oneline --graph
+
+### To revert a git commit
+Below command will revert the last two commits from the current branch as a commit. This will retain the history.
+
+>     $ git revert HEAD~2..HEAD
