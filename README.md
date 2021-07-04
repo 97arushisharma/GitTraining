@@ -108,7 +108,7 @@ something other than GitTraining, you can specify that as the next command-line 
 >     $ git add/rm <file_name>
 >     $ git commit -m "Message Here"
   
-### to fetch all the latest changes from the master branch
+### to fetch all the latest changes for all the branches
 
 >     $ git fetch -v --all
   
@@ -196,3 +196,16 @@ To show differences in the staged changes
 Below command will revert the last two commits from the current branch as a commit. This will retain the history.
 
 >     $ git revert HEAD~2..HEAD
+
+### To pull the changes from master branch onto the current branch
+  
+>     $ git pull origin master
+  
+### To undo the local commits by 1 commit and move the changes to staged(always recommended over hard)
+  
+>     $ git reset --soft HEAD~1
+  
+### To unstage a particular staged file
+  
+>     $ git reset HEAD file.txt
+  
