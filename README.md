@@ -209,3 +209,9 @@ Below command will revert the last two commits from the current branch as a comm
   
 >     $ git reset HEAD file.txt
   
+## Git Sub-Modules
+You can add git sub-modules to a github repo, which is a git repo withing another git repo. To checkout a git repo containing sub-module us the below command:
+  
+>     $ git clone --recursive <git_repo_url>
+If this doesn't work try referring [this](https://stackoverflow.com/a/4438292/12485228)
+  
